@@ -26,7 +26,13 @@
                         <h6>Create New Task</h6>
                     </div>
                     <div class="card-body">
-                        <!-- TODO -->
+                        <form id="task-form">
+                            <input type="text" id="task-title" class="form-control mb-2" placeholder="Task title" required>
+                            <input type="text" id="task-description" class="form-control mb-2" placeholder="Description">
+                            <input type="date" id="task-due-date" class="form-control mb-2" required>
+                            <button type="submit" class="btn btn-primary btn-sm">Add Task</button>
+                            <!-- add a description input, a due date input, and a submit button here -->
+                        </form>
                     </div>
                 </div>
 
@@ -39,7 +45,7 @@
                             <div class="d-flex justify-content-between align-items-start">
                                 <div class="task-content">
                                     <div class="task-title">Sample Task</div>
-                                    <div class="task-description">This is what a task looks like</div>
+                                    <div class="task-description">Example of a task</div>
                                     <div class="task-date">Due: 2025-10-15</div>
                                     <!-- TODO -->
                                 </div>

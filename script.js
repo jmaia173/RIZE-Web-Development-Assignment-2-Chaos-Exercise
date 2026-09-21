@@ -17,6 +17,7 @@ let tasks = [
 function renderTasks() {
     const taskList = document.getElementById('taskList');
     taskList.innerHTML = '';
+    
 
     tasks.forEach(task => {
         const taskItem = document.createElement('div');
@@ -47,4 +48,23 @@ document.addEventListener('DOMContentLoaded', function() {
     renderTasks();
     
     // TODO
+    const taskForm = document.getElementById('task-form');
+
+    taskForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // 1. read the values from the three inputs
+        const title = document.getElementById('task-title').value;
+        const description = document.getElementById('task-description').value;
+        const dueDate = document.getElementById('task-due-date').value;
+
+        // 2. build a task object like the sample one at the top of the file
+        const newTask = { id: Date.now(), title: title, description: description, dueDate: dueDate, assignedTo: "",  completed: false};
+
+        // 3. add it to the tasks array
+        tasks.push(newTask);
+
+        // 4. call renderTasks() so it shows up
+        renderTasks();
+});
 });
